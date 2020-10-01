@@ -15,7 +15,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+         if(request()->is('admin/*')){
+            Inertia::setRootView('app');
+        } else {
+            Inertia::setRootView('front');
+        }
     }
 
     /**
