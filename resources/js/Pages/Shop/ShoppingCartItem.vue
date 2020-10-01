@@ -6,7 +6,7 @@
 
     <div class="media-body">
       <strong class="d-block">{{item.name}}</strong>
-      <span>Quantity: {{item.quantity}} - {{item.price | formatMoney}}</span>
+      <span>Quantity: {{item.quantity}} - {{item.price | formatMoney({symbol:"€"})}}</span>
     </div>
 
     <div class="media-right align-middle">

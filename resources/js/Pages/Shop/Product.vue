@@ -4,7 +4,10 @@
 
     <div class="card-body">
       <h5 class="card-title">{{product.name}}</h5>
-      <p class="card-text">{{product.price | formatMoney}} </p>
+      <ul>
+        <li v-for="ingredient in product.ingredients" class="text-secondary">{{ ingredient.name }} - {{ingredient.price | formatMoney({symbol:"€", format: "%v %s"})}}</li>
+      </ul>
+      <p class="card-text">{{product.price | formatMoney({symbol:"€", format: "%v %s"})}} </p>
       <AddToCart :product="product" />
     </div>
   </div>

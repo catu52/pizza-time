@@ -2,7 +2,7 @@
   <ul class="list-group">
     <li class="list-group-item">
       <strong>
-        Total ({{itemsQuantity}} {{'item' | pluralize(itemsQuantity) }}): {{total | formatMoney}}
+        Total ({{itemsQuantity}} {{'item' | pluralize(itemsQuantity) }}): {{total | formatMoney({symbol:"€", format: "%v %s"})}}
       </strong>
     </li>
   </ul>
