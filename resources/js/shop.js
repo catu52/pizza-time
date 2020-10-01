@@ -34,8 +34,8 @@ export const store = new Vuex.Store({
             }, 0)
         },
         total: (state, getters) => {
-            const sum = getters.cartProducts.reduce((subtotal, item) => {
-                return subtotal + item.price * item.quantity
+            return getters.cartProducts.reduce((total, item) => {
+                return total + item.price * item.quantity
             }, 0)
         }
     },
