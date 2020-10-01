@@ -67,8 +67,8 @@
                                         <ul v-for="item in form.items">
                                             <li>
                                                 <p>{{ item.name }}</p>
-                                                <p>{{ item.price }} 
-                                                x{{ item.pivot.quantity}} ... {{ item.pivot.quantity * item.pivot.subtotal}}</p>
+                                                <p class="text-gray-500">
+                                                Quantity: x{{ item.pivot.quantity}} - {{ item.price }} € </p>
                                             </li>
                                         </ul>
                                   </div>
