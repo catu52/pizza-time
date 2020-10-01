@@ -17,6 +17,18 @@ class Purchase extends Model
      */
     protected $table = 'purchase';
 
+    /**
+     * Mass assignable attributes.
+     * 
+     * @var array
+     */
+    protected $fillable = ['name', 'address', 'total'];
+
+    /**
+     * Additional attributes.
+     * 
+     * @var array
+     */
     protected $appends = [];
 
 

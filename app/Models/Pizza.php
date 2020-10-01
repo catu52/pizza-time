@@ -24,6 +24,11 @@ class Pizza extends Model
      */
     protected $fillable = ['name'];
 
+    /**
+     * Additional attributes.
+     * 
+     * @var array
+     */
     protected $appends = ['price'];
 
     /**

@@ -19,6 +19,8 @@ use App\Http\Controllers\Api\PurchaseController;
 
 Route::get('pizza', [PizzaController::class, 'index']);
 
+Route::post('purchase', [PurchaseController::class, 'purchase']);
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
