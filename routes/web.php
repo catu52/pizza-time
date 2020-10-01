@@ -2,6 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
+//Frontend Controllers
+use App\Http\Controllers\HomeController;
+
+//Backend controllers
+use App\Http\Controllers\Admin\PizzaController;
+use App\Http\Controllers\Admin\IngredientController;
+use App\Http\Controllers\Admin\PurchaseController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +21,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return Inertia\Inertia::render('Dashboard');
-})->name('dashboard');
+
+Route::prefix('admin')->middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::get('/dashboard', function () {
+        return Inertia\Inertia::render('Dashboard');
+    })->name('dashboard');
+
+    Route::resource('pizza', PizzaController::class);
+    Route::resource('ingredient', IngredientController::class);
+    Route::get('purchase', [PurchaseController::class, 'index']);
+});
