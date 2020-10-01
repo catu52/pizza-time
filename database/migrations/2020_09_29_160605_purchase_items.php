@@ -18,6 +18,7 @@ class PurchaseItems extends Migration
             $table->unsignedBigInteger('purchase_id')->comment('ID of the purchase');
             $table->unsignedBigInteger('pizza_id')->comment('ID of the pizza');
             $table->integer('quantity')->comment('Quantity of pizzas');
+            $table->decimal('subtotal', 8, 2)->comment('Subtotal');
             $table->timestamps();
             $table->softDeletes();
         });
